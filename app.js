@@ -77,3 +77,25 @@ const conjuntoFrida = new Conjuntos("Conjunto Frida",2700,5,2,3,true);
 const conjuntoEmma = new Conjuntos("Conjunto Emma",2780,25,3,5,true);
 const conjuntoAstrid = new Conjuntos("Conjunto Astrid",2590,2,1,1,true);
 const conjuntoGreta = new Conjuntos("Conjunto Greta",2880,2,1,1,true);
+
+let listaConjuntos = [];
+
+listaConjuntos.push(new Conjuntos("Conjunto Hanna",2370,2,1,1,true));
+listaConjuntos.push(new Conjuntos("Conjunto Frida",2700,5,2,3,true));
+listaConjuntos.push(new Conjuntos("Conjunto Emma",2780,25,3,5,true));
+listaConjuntos.push(new Conjuntos("Conjunto Astrid",2590,2,1,1,true));
+listaConjuntos.push(new Conjuntos("Conjunto Greta",2880,2,1,1,true));
+
+listaConjuntos.sort((a,b) => {
+    if (a.precio > b.precio){
+        return 1
+    }
+    if (a.precio < b.precio){
+        return -1
+    }
+    return 0
+})
+
+for (let i=0; i < listaConjuntos.length; i++){
+    console.log(listaConjuntos[i]);
+}
