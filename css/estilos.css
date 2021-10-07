@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0; 
+}
+body{
+    background-color: #f8f1eb;
+}
+.fuentePrincipal{
+    font-family: Montserrat;
+    font-weight: 500;
+}
+.colorPrimario{
+    color: #2b2b2b;
+}
+.texto{
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #2b2b2b;
+}
+nav ul li a:hover{
+    color: #d2aca1;
+}
