@@ -1,30 +1,5 @@
-function tomarDatos(){
-    let nombreCompleto = prompt("Ingresá tu nombre completo.");
-    let lugar = prompt("En que ciudad vivís?");
-    let mostrarDatos = `Tu nombre es ${nombreCompleto} y residís en ${lugar}`;
-    confirm(`Tu nombre es ${nombreCompleto} y tenes residís en ${lugar}`);
-    console.log(`Tu nombre es ${nombreCompleto} y tenes residís en ${lugar}`);
-    return mostrarDatos;
-}
-tomarDatos()
-
-/* function precio (nombre) {
-    let conjunto = nombre.toLowerCase()
-    if(conjunto == "hanna"){
-        console.log("El precio del conjunto Hanna es $2700");
-    }else if(conjunto == "frida"){
-        console.log("El precio del conjunto Frida es $2500");
-    }else if(conjunto == "greta"){
-        console.log("Lo sentimos, este producto no está disponible por el momento.");
-    }else{
-        console.log("El nombre ingresado no existe, vuelve a intentarlo.");
-    }
-}
-
-precio("nombre") */
-
 class Conjuntos{
-    constructor(nombre, precio, cantidad, corpiño,bombacha,disponibilidad) {
+    constructor({nombre, precio, cantidad, corpiño,bombacha,disponibilidad}) {
         this.nombre = nombre;
             this.precio = precio;
             this.cantidad = cantidad;
@@ -32,7 +7,7 @@ class Conjuntos{
             this.bombacha = bombacha;
             this.disponibilidad = disponibilidad;
     }
-    talleCorpiño(){
+    /*talleCorpiño(){
             let corpiño;
             this.corpiño = corpiño;
             this.corpiño= Number(prompt("Ingresá tu talle del 1 al 8"));
@@ -64,9 +39,34 @@ class Conjuntos{
             
         }
         
-    }
+    }*/
     
 }
+class carrito{
+    constructor({talleCorpiño,talleBombacha,cantidad}) {
+    this.talleCorpiño= talleCorpiño;
+    this.talleBombacha= talleBombacha;
+    this.cantidad= cantidad;
+    }
+}
+
+const guardarTalles = () => {
+
+    const infoCarrito = new carrito({
+    talleCorpiño: document.getElementById("talleCorpiño").value,
+    talleBombacha: document.getElementById("talleBombacha").value,
+    cantidad: document.getElementById("cantidad").value,
+    })
+
+    document.getElementById("infoCarrito").innerHTML += `
+    <p>El talle de corpiño que elegiste es ${infoCarrito.talleCorpiño}</p>
+    <p>El talle de bombacha que elegiste es ${infoCarrito.talleBombacha}</p>
+    <p>La cantidad que vas a comprar es ${infoCarrito.cantidad}</p>
+    `
+    return infoCarrito;
+}
+
+guardarTalles()
 
 const conjuntoHanna = new Conjuntos("Conjunto Hanna",2370,2,1,1,true);
 const conjuntoFrida = new Conjuntos("Conjunto Frida",2700,5,2,3,true);
@@ -82,21 +82,7 @@ listaConjuntos.push(new Conjuntos("Conjunto Emma",2780,25,3,5,true));
 listaConjuntos.push(new Conjuntos("Conjunto Astrid",2590,2,1,1,true));
 listaConjuntos.push(new Conjuntos("Conjunto Greta",2880,2,1,1,true));
 
-/* listaConjuntos.sort((a,b) => {
-    if (a.precio > b.precio){
-        return 1
-    }
-    if (a.precio < b.precio){
-        return -1
-    }
-    return 0
-})
-
-for (let i=0; i < listaConjuntos.length; i++){
-    console.log(listaConjuntos[i]);
-}
-*/
-function pedirConjuntos() {
+/*function pedirConjuntos() {
     let conjunto1 = Number(prompt("Insertá el precio del primer conjunto"));
     let conjunto2 = Number(prompt("Insertá el precio del segundo conjunto"));
     let sumar= (conjunto1 + conjunto2);
@@ -105,7 +91,6 @@ function pedirConjuntos() {
 }
 pedirConjuntos();
 
-function mostrarResultado(a){
+ function mostrarResultado(a){
     alert(`El total de ambos conjuntos es ${a}`);
-    console.log(`El total de ambos conjuntos es ${a}`);
-}
+    console.log(`El total de ambos conjuntos es ${a}`);*/
