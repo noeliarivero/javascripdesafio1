@@ -1,4 +1,4 @@
-function tomarDatos(){
+/* function tomarDatos(){
     let nombreCompleto = prompt("Ingresá tu nombre completo.");
     let lugar = prompt("En que ciudad vivís?");
     let mostrarDatos = `Tu nombre es ${nombreCompleto} y residís en ${lugar}`;
@@ -8,7 +8,7 @@ function tomarDatos(){
 }
 tomarDatos()
 
-/* function precio (nombre) {
+function precio (nombre) {
     let conjunto = nombre.toLowerCase()
     if(conjunto == "hanna"){
         console.log("El precio del conjunto Hanna es $2700");
@@ -36,7 +36,7 @@ precio("nombre") */
 for (let i=0; i < listaConjuntos.length; i++){
     console.log(listaConjuntos[i]);
 }
-*/
+
 function pedirConjuntos() {
     let conjunto1 = Number(prompt("Insertá el precio del primer conjunto"));
     let conjunto2 = Number(prompt("Insertá el precio del segundo conjunto"));
@@ -49,4 +49,35 @@ pedirConjuntos();
 function mostrarResultado(a){
     alert(`El total de ambos conjuntos es ${a}`);
     console.log(`El total de ambos conjuntos es ${a}`);
+}*/
+
+class Usuario{
+    constructor(nombre, pass){
+        this.nombre = nombre;
+        this.pass= pass;
+    }
 }
+
+let bucle = true;
+
+const noelia = new Usuario ("noelia", "javascript")
+const boton     =document.getElementById("btn")
+const nombre    =document.getElementById("user")
+const pass      =document.getElementById("psw")
+
+const confirmacionDeAcceso = () => {
+        if (nombre.value == noelia.nombre && pass.value == noelia.pass){
+            console.log("Ingresaste a Nur");
+        } else{
+            console.log ("Usuario Incorrecto, vuelve a intentarlo");
+        }
+}
+
+boton.addEventListener("click", (e) => {
+    e.preventDefault()
+    confirmacionDeAcceso()
+})
+boton.addEventListener("keydown", (e) => {
+    e.preventDefault()
+    confirmacionDeAcceso()
+})

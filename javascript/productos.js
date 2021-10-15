@@ -49,7 +49,7 @@ class carrito{
     this.cantidad= cantidad;
     }
 }
-
+const boton     =document.getElementById("btn")
 const guardarTalles = () => {
 
     const infoCarrito = new carrito({
@@ -65,8 +65,15 @@ const guardarTalles = () => {
     `
     return infoCarrito;
 }
+boton.addEventListener("click", (e) => {
+    e.preventDefault()
+    guardarTalles()
+})
+boton.addEventListener("keydown", (e) => {
+    e.preventDefault()
+    guardarTalles()
+})
 
-guardarTalles()
 
 const conjuntoHanna = new Conjuntos("Conjunto Hanna",2370,2,1,1,true);
 const conjuntoFrida = new Conjuntos("Conjunto Frida",2700,5,2,3,true);
