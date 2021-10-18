@@ -1,11 +1,9 @@
 class Conjuntos{
-    constructor({nombre, precio, cantidad, corpiño,bombacha,disponibilidad}) {
+    constructor({nombre, precio,descripcion,img}) {
         this.nombre = nombre;
             this.precio = precio;
-            this.cantidad = cantidad;
-            this.corpiño = corpiño;
-            this.bombacha = bombacha;
-            this.disponibilidad = disponibilidad;
+            this.descripcion = descripcion;
+            this.img = img;
     }
     /*talleCorpiño(){
             let corpiño;
@@ -42,14 +40,15 @@ class Conjuntos{
     }*/
     
 }
-class carrito{
+/*class carrito{
     constructor({talleCorpiño,talleBombacha,cantidad}) {
     this.talleCorpiño= talleCorpiño;
     this.talleBombacha= talleBombacha;
     this.cantidad= cantidad;
     }
 }
-const boton     =document.getElementById("btn")
+const boton     =document.getElementById("btn");
+
 const guardarTalles = () => {
 
     const infoCarrito = new carrito({
@@ -64,7 +63,7 @@ const guardarTalles = () => {
     <p>La cantidad que vas a comprar es ${infoCarrito.cantidad}</p>
     `
     return infoCarrito;
-}
+};
 boton.addEventListener("click", (e) => {
     e.preventDefault()
     guardarTalles()
@@ -72,22 +71,39 @@ boton.addEventListener("click", (e) => {
 boton.addEventListener("keydown", (e) => {
     e.preventDefault()
     guardarTalles()
-})
+})*/
 
+const imprimirDatos =document.getElementById("printCardProducts");
 
-const conjuntoHanna = new Conjuntos("Conjunto Hanna",2370,2,1,1,true);
-const conjuntoFrida = new Conjuntos("Conjunto Frida",2700,5,2,3,true);
-const conjuntoEmma = new Conjuntos("Conjunto Emma",2780,25,3,5,true);
-const conjuntoAstrid = new Conjuntos("Conjunto Astrid",2590,2,1,1,true);
-const conjuntoGreta = new Conjuntos("Conjunto Greta",2880,2,1,1,true);
+const conjuntoHanna = new Conjuntos("Conjunto Hanna",2370,"hola");
+const conjuntoFrida = new Conjuntos("Conjunto Frida",2700,"hola");
+const conjuntoEmma = new Conjuntos("Conjunto Emma",2780,"hola");
+const conjuntoAstrid = new Conjuntos("Conjunto Astrid",2590,"hola");
+const conjuntoGreta = new Conjuntos("Conjunto Greta",2880,"hola");
 
 let listaConjuntos = [];
 
-listaConjuntos.push(new Conjuntos("Conjunto Hanna",2370,2,1,1,true));
-listaConjuntos.push(new Conjuntos("Conjunto Frida",2700,5,2,3,true));
-listaConjuntos.push(new Conjuntos("Conjunto Emma",2780,25,3,5,true));
-listaConjuntos.push(new Conjuntos("Conjunto Astrid",2590,2,1,1,true));
-listaConjuntos.push(new Conjuntos("Conjunto Greta",2880,2,1,1,true));
+listaConjuntos.push({ 'nombre': 'Conjunto Hanna', 'precio': 2370, 'descripcion': "hola", 'img': "../media/conjunto_hanna.jpg"}),
+listaConjuntos.push({ 'nombre': 'Conjunto Frida', 'precio': 2370, 'descripcion': "hola", 'img': "../media/conjunto_hanna.jpg"}),
+listaConjuntos.push({ 'nombre': 'Conjunto Emma', 'precio': 2370, 'descripcion': "hola", 'img': "../media/conjunto_hanna.jpg"}),
+listaConjuntos.push({ 'nombre': 'Conjunto Astrid', 'precio': 2370, 'descripcion': "hola", 'img': "../media/conjunto_hanna.jpg"}),
+listaConjuntos.push({ 'nombre': 'Conjunto Greta', 'precio': 2370, 'descripcion': "hola", 'img': "../media/conjunto_hanna.jpg" }),
+
+localStorage.setItem('listaConjuntos', JSON.stringify(listaConjuntos));
+let listaStorage = JSON.parse(localStorage.getItem('session'));
+
+listaConjuntos.forEach (element => {
+    imprimirDatos.innerHTML += `
+        <div class="card col-4" style="width: 10rem;">
+        <img src="${element.img}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">${element.nombre}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">${element.precio}</h6>
+        <p class="card-text">${element.descripcion}</p>
+        <button>Comprar</button>
+        </div>
+        </div>
+    `});
 
 /*function pedirConjuntos() {
     let conjunto1 = Number(prompt("Insertá el precio del primer conjunto"));
@@ -99,5 +115,5 @@ listaConjuntos.push(new Conjuntos("Conjunto Greta",2880,2,1,1,true));
 pedirConjuntos();
 
  function mostrarResultado(a){
-    alert(`El total de ambos conjuntos es ${a}`);
-    console.log(`El total de ambos conjuntos es ${a}`);*/
+    alert(`El total de ambos conjuntos es ${a}`),
+    console.log(`El total de ambos conjuntos es ${a}`),*/

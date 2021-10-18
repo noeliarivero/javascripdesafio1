@@ -21,3 +21,7 @@ body{
 nav ul li a:hover{
     color: #d2aca1;
 }
+.productos .card{
+    width: 100%;
+
+}
