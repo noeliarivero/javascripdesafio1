@@ -84,17 +84,17 @@ const conjuntoGreta = new Conjuntos("Conjunto Greta",2880,"hola");
 let listaConjuntos = [];
 
 listaConjuntos.push({ 'nombre': 'Conjunto Hanna', 'precio': 2370, 'descripcion': "hola", 'img': "../media/conjunto_hanna.jpg"}),
-listaConjuntos.push({ 'nombre': 'Conjunto Frida', 'precio': 2370, 'descripcion': "hola", 'img': "../media/conjunto_hanna.jpg"}),
-listaConjuntos.push({ 'nombre': 'Conjunto Emma', 'precio': 2370, 'descripcion': "hola", 'img': "../media/conjunto_hanna.jpg"}),
-listaConjuntos.push({ 'nombre': 'Conjunto Astrid', 'precio': 2370, 'descripcion': "hola", 'img': "../media/conjunto_hanna.jpg"}),
-listaConjuntos.push({ 'nombre': 'Conjunto Greta', 'precio': 2370, 'descripcion': "hola", 'img': "../media/conjunto_hanna.jpg" }),
+listaConjuntos.push({ 'nombre': 'Conjunto Frida', 'precio': 2370, 'descripcion': "hola", 'img': "../media/frida.jpg"}),
+listaConjuntos.push({ 'nombre': 'Conjunto Emma', 'precio': 2370, 'descripcion': "hola", 'img': "../media/emma.jpg"}),
+listaConjuntos.push({ 'nombre': 'Conjunto Astrid', 'precio': 2370, 'descripcion': "hola", 'img': "../media/astrid.jpg"}),
+listaConjuntos.push({ 'nombre': 'Conjunto Greta', 'precio': 2370, 'descripcion': "hola", 'img': "../media/greta.jpg" }),
 
 localStorage.setItem('listaConjuntos', JSON.stringify(listaConjuntos));
 let listaStorage = JSON.parse(localStorage.getItem('session'));
 
 listaConjuntos.forEach (element => {
     imprimirDatos.innerHTML += `
-        <div class="card col-4" style="width: 10rem;">
+        <div class="card col-3" style="width: 10rem;">
         <img src="${element.img}" class="card-img-top" alt="...">
         <div class="card-body">
         <h5 class="card-title">${element.nombre}</h5>

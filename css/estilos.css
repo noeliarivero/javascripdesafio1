@@ -21,7 +21,9 @@ body{
 nav ul li a:hover{
     color: #d2aca1;
 }
-.productos .card{
-    width: 100%;
-
+#printCardProducts{
+    justify-content: center;
+}
+.card{
+    margin:2px;
 }
