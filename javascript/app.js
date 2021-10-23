@@ -65,6 +65,10 @@ const boton     =document.getElementById("btn")
 const nombre    =document.getElementById("user")
 const pass      =document.getElementById("psw")
 
+$(function () {
+    console.log('Página lista.')
+})
+
 const confirmacionDeAcceso = () => {
         if (nombre.value == noelia.nombre && pass.value == noelia.pass){
             console.log("Ingresaste a Nur");
@@ -73,11 +77,11 @@ const confirmacionDeAcceso = () => {
         }
 }
 
-boton.addEventListener("click", (e) => {
+$('#btn').on("click", (e) => {
     e.preventDefault()
     confirmacionDeAcceso()
 })
-boton.addEventListener("keydown", (e) => {
+$('#btn').on("keydown", (e) => {
     e.preventDefault()
     confirmacionDeAcceso()
 })
