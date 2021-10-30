@@ -65,8 +65,8 @@ const boton     =document.getElementById("btn")
 const nombre    =document.getElementById("user")
 const pass      =document.getElementById("psw")
 
-$(function () {
-    console.log('Página lista.')
+$(function() {
+    console.log('Página lista.');
 })
 
 const confirmacionDeAcceso = () => {
@@ -85,3 +85,10 @@ $('#btn').on("keydown", (e) => {
     e.preventDefault()
     confirmacionDeAcceso()
 })
+
+$('.box').css('background','red')
+    .slideUp(2000)
+    .slideDown(2000)
+    .delay(2000)
+    .slideUp(2000)
+    .slideDown(2000);

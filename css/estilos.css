@@ -21,9 +21,34 @@ body{
 nav ul li a:hover{
     color: #d2aca1;
 }
+.textoHover:hover{
+    color: #d2aca1;
+    text-decoration: none;
+    text-transform: none;
+}
 #printCardProducts{
     justify-content: center;
 }
 .card{
     margin:2px;
+}
+.btn-whatsapp {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    border-radius: 50%;
+  }
+  
+.btn-whatsapp img{
+    width: 45px;
+    height: 45px;
+    vertical-align:middle;
+}
+/* desafio concatenar */
+.box{
+    width: 200px;
+    height: 200px;
+    background-color:#2b2b2b;
 }

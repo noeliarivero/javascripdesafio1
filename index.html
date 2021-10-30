@@ -8,33 +8,40 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet"><link>
 	<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
 
-	<title>Nur Lencería</title>
+	<title>Nur | Lencería de diseño</title>
 
 </head>
 <body>
-
-	<nav class="navbar navbar-light">
-		<a class="mr-auto navbar-brand" href="index.html">
-			<img src="media/logo.png" width="130" class="d-inline-block align-top" alt="Nur" loading="lazy">
+	<div class="navbar">
+		<a class="justify-content-center"" href="index.html">
+			<img src="media/logo.png" width="140" class="logo" alt="Nur" loading="lazy">
 		</a>
-		<ul class="menu nav ml-auto">
-		<li class="menu__boton nav-item fuentePrincipal ">
-			<a class="nav-link colorPrimario active" href="index.html">Inicio</a>
-		</li>
-		<li class="menu__boton nav-item fuentePrincipal">
-			<a class="nav-link colorPrimario" href="pages/productos.html">Productos</a>
-		</li>
-		<li class="menu__boton nav-item fuentePrincipal">
-			<a class="nav-link colorPrimario" href="pages/comocomprar.html">Cómo Comprar</a>
-		</li>
-		<li class="menu__boton nav-item fuentePrincipal">
-			<a class="nav-link colorPrimario" href="pages/quienessomos.html">Quienes Sómos</a>
-		</li>
-		<li class="menu__boton nav-item fuentePrincipal">
-			<a class="nav-link colorPrimario" href="pages/contacto.html" tabindex="-1" aria-disabled="true">Contacto</a>
-		</li>
+		<nav class="navbar justify-content-center">
+		<ul class="menu nav">
+			<li class="menu__boton nav-item fuentePrincipal ">
+				<a class="nav-link colorPrimario active" href="index.html">Inicio</a>
+			</li>
+			<li class="menu__boton nav-item fuentePrincipal">
+				<a class="nav-link colorPrimario" href="pages/productos.html">Productos</a>
+			</li>
+			<li class="menu__boton nav-item fuentePrincipal">
+				<a class="nav-link colorPrimario" href="pages/comocomprar.html">Cómo Comprar</a>
+			</li>
+			<li class="menu__boton nav-item fuentePrincipal">
+				<a class="nav-link colorPrimario" href="pages/quienessomos.html">Quienes Sómos</a>
+			</li>
+			<li class="menu__boton nav-item fuentePrincipal">
+				<a class="nav-link colorPrimario" href="pages/contacto.html" tabindex="-1" aria-disabled="true">Contacto</a>
+			</li>
 		</ul>
 	</nav>
+			
+	<a class="mr-sm-2 texto textoHover" href=".html">
+		<img src="media/carro.png" width="20" class="mr-auto" alt="Nur" loading="lazy">
+	</a>
+
+	</div>
+
 
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
@@ -58,6 +65,9 @@
 		</a>
 	</div>
 
+	
+	<div class="box"></div>
+
 	<form>
         <p>Escribí tu nombre</p>
         <input id="user" type="text" type="text" value="">
@@ -65,11 +75,14 @@
         <input id="psw" type="password" type="password" value="">
         <button id="btn">Entrar</button>
     </form>
+	
+	<div class="btn-whatsapp">
+		<a href="https://api.whatsapp.com/send?phone=5493425208515&text=Hola!%20%0AQuisiera%20consultar" target="_blank"><img src="media/whatsapp.png" alt="whatsapp"></a>
+	</div>
+	
 
-
-	<script src="javascript/jquery-3.6.0.min.js">  </script>
 	<script src="javascript/app.js" type="text/javascript" charset="utf-8" async defer></script>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="../javascript/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>
