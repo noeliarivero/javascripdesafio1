@@ -49,15 +49,15 @@ pedirConjuntos();
 function mostrarResultado(a){
     alert(`El total de ambos conjuntos es ${a}`);
     console.log(`El total de ambos conjuntos es ${a}`);
-}*/
+}
 
 class Usuario{
     constructor(nombre, pass){
         this.nombre = nombre;
         this.pass= pass;
     }
-}
-
+}*/
+/*
 let bucle = true;
 
 const noelia = new Usuario ("noelia", "javascript")
@@ -84,11 +84,26 @@ $('#btn').on("click", (e) => {
 $('#btn').on("keydown", (e) => {
     e.preventDefault()
     confirmacionDeAcceso()
-})
+})*/
 
-$('.box').css('background','red')
-    .slideUp(2000)
-    .slideDown(2000)
-    .delay(2000)
-    .slideUp(2000)
-    .slideDown(2000);
+// desafío ajax
+
+ const url = "https://breakingbadapi.com/api/characters";
+
+$("#busqueda").prepend('<button id="btn1">Mostrar</button>')
+
+$("#btn1").click(() => {
+
+    $.get(url,(respuesta, estado)=> {
+
+        if(estado == "success") {
+            console.log(respuesta[0])
+            $('#respuesta').prepend (`
+            <img src="${respuesta[0].img}" width="200px"></img>
+            <p>${respuesta[0].name}</p>
+            `)
+
+        }
+    })
+
+ })
