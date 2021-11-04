@@ -13,12 +13,12 @@
 
 </head>
 <body>
-
-	<nav class="navbar navbar-light">
-		<a class="mr-auto navbar-brand" href="../index.html">
+<div class="navbar">
+		<a class="justify-content-center" href="../index.html">
 			<img src="../media/logo.png" width="130" class="d-inline-block align-top" alt="Nur" loading="lazy">
 		</a>
-		<ul class="menu nav ml-auto">
+	<nav class="navbar justify-content-center">
+		<ul class="menu nav">
 		<li class="menu__boton nav-item fuentePrincipal ">
 			<a class="nav-link colorPrimario active" href="../index.html">Inicio</a>
 		</li>
@@ -36,26 +36,46 @@
 		</li>
 		</ul>
 	</nav>
+</div>	
+
+
+<div id="printCardProducts" class="items texto"> 
+</div>
+
+<div class="alert container position-sticky top-0 alert-primary hide" role="alert">
+    Producto Añadido al carrito!
+</div>
+<div class="alert container position-sticky top-0 alert-danger remove" role="alert">
+      Producto removido!
+</div>
+
+
+<div class="carrito">
+	<table class="table">
+	<thead>
+	<tr class="text-primary">
+		<th scope="col">#</th>
+		<th scope="col">Productos</th>
+		<th scope="col">Precio</th>
+		<th scope="col">Cantidad</th>
+	</tr>
+	</thead>
+	<tbody class="tbody">
+	</tbody>
+	</table>
 	
-	<div id="printCardProducts" class="container-fluid row texto">
+	<div class="row mx-4">
+	<div class="col">
+		<h3 class="itemCartTotal fuentePrincipal colorPrimario">Total: 0</h3>
 	</div>
-
-	<div class="m-auto">
-		<form action="">
-			<p>Ingresá el talle de corpiño (85 al 120)</p>
-			<input type="text" id="talleCorpiño">
-			<p>Ingresá el talle de bombacha (1 al 8)</p>
-			<input type="text" id="talleBombacha">
-			<p>Ingresá la cantidad de conjuntos que vas a comprar</p>
-			<input type="text" id="cantidad">
-			<button id="btn">Imprimir</button>
-		</form>
+	<div class="col d-flex justify-content-end">
+		<button class="btn btn-success compra" >COMPRAR</button>
 	</div>
-	<div id="infoCarrito">
-
 	</div>
+</div>
 
     <script src="../javascript/productos.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="../javascript/carrito.js" type="text/javascript" charset="utf-8" async defer></script>
 	<script src="../javascript/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
