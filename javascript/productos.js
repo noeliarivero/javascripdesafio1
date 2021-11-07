@@ -7,7 +7,7 @@ class Conjuntos{
             this.cantidad = cantidad;
     }
 }
-const imprimirDatos =document.getElementById("printCardProducts");
+const imprimirDatos = document.getElementById("printCardProducts");
 
 const conjuntoHanna = new Conjuntos("Conjunto Hanna",2370,"hola");
 const conjuntoFrida = new Conjuntos("Conjunto Frida",2700,"hola");
@@ -15,7 +15,6 @@ const conjuntoEmma = new Conjuntos("Conjunto Emma",2780,"hola");
 const conjuntoAstrid = new Conjuntos("Conjunto Astrid",2590,"hola");
 const conjuntoGreta = new Conjuntos("Conjunto Greta",2880,"hola");
 let listaConjuntos = [];
-
 
 listaConjuntos.push({ 'nombre': 'Conjunto Hanna', 'precio': 2370, 'descripcion': "hola", 'img': "../media/conjunto_hanna.jpg",'cantidad':10}),
 listaConjuntos.push({ 'nombre': 'Conjunto Frida', 'precio': 2370, 'descripcion': "hola", 'img': "../media/frida.jpg",'cantidad':10}),
@@ -38,21 +37,19 @@ listaConjuntos.forEach (element => {
     </div>
     `});
 
-//////////////////////////////////////
-////////////CARRITO COMPRA////////////
-//////////////////////////////////////
-
+//carrito
 const clickButton = document.querySelectorAll('.button')
 const tbody = document.querySelector('.tbody')
 const clickCompra = document.querySelector('.compra')
+const clickRecargar = document.querySelector('.btn-recargar')
 
 let carrito = [];
 
 clickButton.forEach(btn => {
-    btn.addEventListener('click', addToCarritoItem)
+    btn.addEventListener('click', añadirItemCarrito)
   })
 
-function addToCarritoItem(e){
+function añadirItemCarrito(e){
     const button = e.target
     const item = button.closest('.card')
     const itemTitle = item.querySelector('.card-title').textContent;
@@ -66,10 +63,10 @@ function addToCarritoItem(e){
       cantidad: 1
     }
   
-    addItemCarrito(newItem)
+    añadirItem(newItem)
   }
 
-function addItemCarrito(newItem){
+function añadirItem(newItem){
    carrito.push(newItem)
    mostrarProductosAgregados()
 }
@@ -96,7 +93,7 @@ function mostrarProductosAgregados(){
       tr.innerHTML = Content;
       tbody.append(tr)   
 
-    tr.querySelector(".delete").addEventListener('click', removeItemCarrito)
+    tr.querySelector(".delete").addEventListener('click', borrarItemCarrito)
     tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
     })
     CarritoTotal()
@@ -112,10 +109,10 @@ function CarritoTotal(){
 
     itemCartTotal.innerHTML = `Total $${Total}`
     
-    addLocalStorage()
+    añadirLocalStorage()
   }
 
-  function removeItemCarrito(e){
+  function borrarItemCarrito(e){
     const buttonDelete = e.target
     const tr = buttonDelete.closest(".ItemCarrito")
     const title = tr.querySelector('.title').textContent;
@@ -150,7 +147,7 @@ function CarritoTotal(){
     })
   }  
 
-  function addLocalStorage(){
+  function añadirLocalStorage(){
     localStorage.setItem('carrito', JSON.stringify(carrito))
   }
 
@@ -163,14 +160,17 @@ function CarritoTotal(){
   }
 
 clickCompra.addEventListener('click', comprar)
+clickRecargar.addEventListener('click', borrarCarrito)
 
-    function comprar (){
-        if (carrito.length > 0){
-            alert('Compra exitosa!')
+  function comprar (){
+      if (carrito.length > 0){
+          $('.modal').show() 
             //carrito borrar elementos del carrito
-        } else {
-            alert('No hay productos en el carrito, por favor seleccione un producto.')
-
-
-        }
+      } else {
+          alert('No hay productos en el carrito, por favor seleccione un producto.')
+      }
   }
+    function borrarCarrito (){
+      localStorage.clear()
+      window.location.reload()
+    }
