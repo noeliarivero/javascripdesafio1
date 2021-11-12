@@ -1,10 +1,8 @@
 class Conjuntos{
-    constructor({nombre,precio,descripcion,img,cantidad}) {
+    constructor({nombre,precio,img}) {
         this.nombre = nombre;
             this.precio = precio;
-            this.descripcion = descripcion;
             this.img = img;
-            this.cantidad = cantidad;
     }
 }
 const imprimirDatos = document.getElementById("printCardProducts");
@@ -14,6 +12,7 @@ const conjuntoFrida = new Conjuntos("Conjunto Frida",2700,"hola");
 const conjuntoEmma = new Conjuntos("Conjunto Emma",2780,"hola");
 const conjuntoAstrid = new Conjuntos("Conjunto Astrid",2590,"hola");
 const conjuntoGreta = new Conjuntos("Conjunto Greta",2880,"hola");
+
 let listaConjuntos = [];
 
 listaConjuntos.push({ 'nombre': 'Conjunto Hanna', 'precio': 2370, 'descripcion': "hola", 'img': "../media/conjunto_hanna.jpg",'cantidad':10}),
@@ -73,32 +72,32 @@ function añadirItem(newItem){
 
 function mostrarProductosAgregados(){
     tbody.innerHTML = ''
-    carrito.map(item => {
-      const tr = document.createElement('tr')
-      tr.classList.add('ItemCarrito')
-      const Content = `
+      carrito.map(item => {
+        const tr = document.createElement('tr')
+        tr.classList.add('ItemCarrito')
+        const Content = `
       
-      <th scope="row">-</th>
-              <td class="table__productos">
-                <img src=${item.img}  alt="">
-                <h6 class="title">${item.title}</h6>
-              </td>
-              <td class="table__price"><p>${item.precio}</p></td>
-              <td class="table__cantidad">
-                <input type="number" min="1" value=${item.cantidad} class="input__elemento">
-                <button class="delete btn btn-danger">x</button>
-              </td>
-      
-      `
-      tr.innerHTML = Content;
-      tbody.append(tr)   
+        <th scope="row">-</th>
+                <td class="table__productos">
+                  <img src=${item.img}  alt="">
+                  <h6 class="title">${item.title}</h6>
+                </td>
+                <td class="table__price"><p>${item.precio}</p></td>
+                <td class="table__cantidad">
+                  <input type="number" min="1" value=${item.cantidad} class="input__elemento">
+                  <button class="delete btn btn-danger">x</button>
+                </td>
+        
+        `
+        tr.innerHTML = Content;
+        tbody.append(tr)   
 
-    tr.querySelector(".delete").addEventListener('click', borrarItemCarrito)
-    tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
+      tr.querySelector(".delete").addEventListener('click', borrarItemCarrito)
+      tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
     })
     CarritoTotal()
-
 }
+
 function CarritoTotal(){
     let Total = 0;
     const itemCartTotal = document.querySelector('.itemCartTotal')
@@ -116,7 +115,7 @@ function CarritoTotal(){
     const buttonDelete = e.target
     const tr = buttonDelete.closest(".ItemCarrito")
     const title = tr.querySelector('.title').textContent;
-    for(let i=0; i<carrito.length ; i++){
+    for(let i=0; i < carrito.length ; i++){
   
       if(carrito[i].title.trim() === title.trim()){
         carrito.splice(i, 1)
@@ -150,6 +149,25 @@ function CarritoTotal(){
   function añadirLocalStorage(){
     localStorage.setItem('carrito', JSON.stringify(carrito))
   }
+
+  
+//////////////////////////////////////////////
+    //Si el producto no esta agregado, se agrega
+    //Si el producto ya esta agregado, se aumenta la cantidad
+    const yaAgregado = carrito.some( item => item.title === title);
+    if(!yaAgregado){
+        carrito = [...carrito, title]
+    } else{
+        carrito.forEach(carrito => {
+            if(item.title === item.title){
+                carrito.cantidad++;
+            }
+        })
+    }
+    localStorage.setItem('carritoLF', JSON.stringify(productosCarrito));
+//////////////////////////////////////////////
+
+
 
   window.onload = function(){
     const storage = JSON.parse(localStorage.getItem('carrito'));

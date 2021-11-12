@@ -163,6 +163,34 @@ nav ul li a:hover {
   font-size: 10px;
 }
 
+#printApi {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 600px 250px;
+      grid-template-columns: 600px 250px;
+  -ms-grid-rows: 450px;
+      grid-template-rows: 450px;
+      grid-template-areas: 'historia imagen';
+  grid-column-gap: 100px;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#enviarMail {
+  opacity: 0;
+}
+
+.contact-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 @media screen and (min-width: 768px) {
   .logo {
     margin-left: 20px;
